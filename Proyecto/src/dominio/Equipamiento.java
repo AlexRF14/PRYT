@@ -10,6 +10,6 @@ public class Equipamiento extends Item{
 		this.tipo = tipo;
 	}
 	public String toString(){
-		return super.toString() + " Tipo: " + tipo;
+		return super.toString() + " Tipo: " + tipo + " Equipamiento ";
 	}
 }

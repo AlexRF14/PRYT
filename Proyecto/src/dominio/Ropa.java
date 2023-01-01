@@ -9,6 +9,6 @@ public class Ropa extends Item{
 		this.talla = talla;
 	}
 	public String toString(){
-		return super.toString() + " Talla: " + talla;
+		return super.toString() + " Talla: " + talla + " Ropa ";
 	}
 }

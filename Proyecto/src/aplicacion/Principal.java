@@ -22,7 +22,9 @@ public class Principal{
 			System.out.println("2: Añadir Ropa al catálogo");
 			System.out.println("3: Añadir un Equipamiento al catálogo");
 			System.out.println("4: Quitar Items del catálogo");
-			System.out.println("5: Salir ");
+			System.out.println("5: Modificar una Ropa");
+			System.out.println("6: Modificar un Elemento");
+			System.out.println("7: Salir ");
 			Scanner sc = new Scanner(System.in);
 			
 			opcion = sc.nextInt();
@@ -66,9 +68,44 @@ public class Principal{
 				}else{
 					System.out.println("Fila inexistente, pruebe con otra");
 				}
+				break;
+
+			case 5:
+				Scanner rt = new Scanner(System.in);
+				System.out.println("Nombre del prodructo ");
+                               	String nombrenn = rt.nextLine();
+                               	System.out.println("Nombre de la marca ");
+                               	String marcann = rt.nextLine();
+                               	System.out.println("Talla de la prenda ");
+                               	String nounnn = rt.nextLine();
+                               	System.out.println("Precio (sin símbolos) ");
+                              	int numnn = rt.nextInt();
+                               	System.out.println("Indique la fila que desea modificar del catalogo");
+                                int indm = rt.nextInt();
+				lista.remove(indm -1);
+				lista.add(indm - 1, new Ropa(nombrenn , marcann , numnn , nounnn ));
+				System.out.println("Modificado =)");
+				break;
+			case 6:
+				Scanner tr = new Scanner(System.in);
+                                System.out.println("Nombre del prodructo ");
+                                String nombren = tr.nextLine();
+                                System.out.println("Nombre de la marca ");
+                                String marcan = tr.nextLine();
+                                System.out.println("Tipo de objeto ");
+                                String nounn = tr.nextLine();
+                                System.out.println("Precio (sin símbolos) ");
+                                int numn = tr.nextInt();
+                                System.out.println("Indique la fila que desea modificar del catalogo");
+                                int indd = tr.nextInt();
+                                lista.remove(indd -1);
+                                lista.add(indd - 1, new Ropa(nombren , marcan , numn , nounn ));
+                                System.out.println("Modificado");
+                                break;
 
 
-			case 5: 
+			
+			case 7: 
 				salir = true;
 
 			default: System.out.println("Saliendo...");break;
