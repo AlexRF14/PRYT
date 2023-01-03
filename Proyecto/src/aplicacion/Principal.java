@@ -12,10 +12,16 @@ public class Principal{
 			lista.add(new Equipamiento("Pure Drive" , "Babolat" , 90 , "Raqueta"));
 			lista.add(new Equipamiento("Strong protect" , "Nike" , 35 , "Casco"));
 			lista.add(new Equipamiento("9m Climbing" , "Black Diamond" , 85 , "Cuerda de escalada"));
-			
+		ArrayList<Item> bajas = new ArrayList<Item>();
+			bajas.add(new Ropa("JJ" , "Adidas" , 140 , "L"));
+			bajas.add(new Equipamiento("Black bat" , "HKH" , 45 , "Bate de baseball"));
+
 			int opcion;
 			boolean salir = false;
-		
+			
+			 int opcion2;
+                         boolean salir2 = false;
+
 			while(!salir){
 			System.out.println("Seleccionar una de las siguientes opciones");
 			System.out.println("1: Visualizar el catálogo");
@@ -24,8 +30,14 @@ public class Principal{
 			System.out.println("4: Quitar Items del catálogo");
 			System.out.println("5: Modificar una Ropa");
 			System.out.println("6: Modificar un Elemento");
-			System.out.println("7: Salir ");
-			Scanner sc = new Scanner(System.in);
+			System.out.println("7: Visualizar la lista de bajas");
+			System.out.println("8: Añadir un producto de la lista de bajas al catálogo"); 
+			System.out.println("9: Bajar un producto a la lista de bajas");
+			System.out.println("10: Salir del programa");
+			
+
+
+		        Scanner sc = new Scanner(System.in);
 			
 			opcion = sc.nextInt();
 			switch(opcion){
@@ -103,9 +115,31 @@ public class Principal{
                                 System.out.println("Modificado");
                                 break;
 
-
+			case 7:
 			
-			case 7: 
+						
+	                        for (Item texto2 : bajas){
+
+                                System.out.println(texto2);
+                      		}
+              	                break;
+			case 8:
+				Scanner ss2 = new Scanner(System.in);
+                               	System.out.println("Indique la fila de la lista de bajas que desea añadir al catálogo");
+				int idb2 = ss2.nextInt();
+				lista.add(bajas.get(idb2 - 1));
+				bajas.remove(idb2 - 1);
+                               	break;	
+			case 9:
+				Scanner ss3 = new Scanner(System.in);
+                                System.out.println("Indique la fila del catálogo que desea añadir a la lista de bajas");
+                                int idb3 = ss3.nextInt();
+				bajas.add(lista.get(idb3 - 1));
+				lista.remove(idb3 - 1);
+				break;
+				
+				//}
+			case 10: 
 				salir = true;
 
 			default: System.out.println("Saliendo...");break;
