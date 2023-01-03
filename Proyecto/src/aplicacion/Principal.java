@@ -5,6 +5,10 @@ import java.util.*;
 import java.util.Scanner;
 public class Principal{
 	 public static void main(String args []){
+		 /**
+		  * ArrayList lista: Es el catálogo, que viene con 6 productos de base
+		  * ArrayList bajas: Es la lista de bajas, que viene con 2 productos de base
+		  */
 		 ArrayList<Item> lista = new ArrayList<Item>();
   			lista.add(new Ropa("MJ" , "Nike" , 110 , "M"));				
 			lista.add(new Ropa("Argentina" , "Adidas" , 110 , "L"));
@@ -21,7 +25,10 @@ public class Principal{
 			
 			 int opcion2;
                          boolean salir2 = false;
-
+            /**
+             * Switch con 10 alternativas
+             * Cada case viene explicado en el Switch
+             */
 			while(!salir){
 			System.out.println("Seleccionar una de las siguientes opciones");
 			System.out.println("1: Visualizar el catálogo");
@@ -36,7 +43,9 @@ public class Principal{
 			System.out.println("10: Salir del programa");
 			
 
-
+			/**
+			 * Muestra el ArrayList lista
+			 */
 		        Scanner sc = new Scanner(System.in);
 			
 			opcion = sc.nextInt();
@@ -47,6 +56,13 @@ public class Principal{
 					System.out.println(texto);
 				}
 				break;
+			/**
+			 * Agrega un objeto Ropa al ArrayList lista
+			 * @param nombrer El nombre de la Ropa
+			 * @param marcar El nombre de la marca de la Ropa
+			 * @param numr El precio de la Ropa
+			 * @param nounr La talla de la Ropa
+			 */
 			case 2:
 				Scanner cs = new Scanner(System.in);
 				System.out.println("Nombre del prodructo ");
@@ -59,6 +75,13 @@ public class Principal{
 				int numr = cs.nextInt();
 				lista.add(new Ropa(nombrer , marcar , numr , nounr ));
 				break;
+				/**
+				 * Agrega un objeto Equipamiento al ArrayList lista
+				 * @param nombre El nombre del Equipamiento
+				 * @param marca El nombre del Equipamiento
+				 * @param num El precio del Equipamiento
+				 * @param noun La talla del Equipamiento
+				 */
 			case 3:
                                 Scanner ss = new Scanner(System.in);
 				System.out.println("Nombre del prodructo ");
@@ -71,6 +94,10 @@ public class Principal{
                                 int num = ss.nextInt();
                                 lista.add(new Equipamiento(nombre , marca , num , noun ));
                                 break;
+                /**
+                 * Se selecciona la posición del Item (Ropa/Equipamiento) y se elimina del ArrayList lista
+                 * @param ind El número de la fila en la que se encuentra el Item en el ArrayList lista
+                 */
 			case 4:
 				System.out.println("Indique la fila que desea eliminar del catalogo");
 				Scanner wt = new Scanner(System.in);
@@ -81,7 +108,14 @@ public class Principal{
 					System.out.println("Fila inexistente, pruebe con otra");
 				}
 				break;
-
+			    /**
+			     * Modificar una Ropa seleccionando su fila, modificandola y posteriormente sustituyendola
+			     * @param nombrenn El nombre de la Ropa 
+			     * @param marcann El nombre de la marca de la Ropa
+			     * @param nounn La talla de la Ropa
+			     * @param numnn El precio de la Ropa
+			     * @param indm El número de la fila en la que se encuentra el Item en el ArrayList lista
+			     */
 			case 5:
 				Scanner rt = new Scanner(System.in);
 				System.out.println("Nombre del prodructo ");
@@ -98,6 +132,14 @@ public class Principal{
 				lista.add(indm - 1, new Ropa(nombrenn , marcann , numnn , nounnn ));
 				System.out.println("Modificado =)");
 				break;
+				/**
+			     * Modificar un Equipamiento seleccionando su fila, modificandola y posteriormente sustituyendola
+			     * @param nombren El nombre del Equipamiento
+			     * @param marcan El nombre de la marca del Equipamiento
+			     * @param noun La talla del Equipamiento
+			     * @param numn El precio del Equipamiento
+			     * @param indd El número de la fila en la que se encuentra el Item en el ArrayList lista
+			     */
 			case 6:
 				Scanner tr = new Scanner(System.in);
                                 System.out.println("Nombre del prodructo ");
@@ -114,7 +156,9 @@ public class Principal{
                                 lista.add(indd - 1, new Ropa(nombren , marcan , numn , nounn ));
                                 System.out.println("Modificado");
                                 break;
-
+                 /**
+       			 * Muestra el ArrayList bajas                			 
+       			 */   
 			case 7:
 			
 						
@@ -123,13 +167,23 @@ public class Principal{
                                 System.out.println(texto2);
                       		}
               	                break;
+              	 /**
+              	  * Añadir un objeto del ArrayList bajas al ArrayList lista
+              	  * @param idb2 El número de la fila en la que se encuentra el Item en el ArrayList bajas
+              	  */
+              	                
 			case 8:
 				Scanner ss2 = new Scanner(System.in);
                                	System.out.println("Indique la fila de la lista de bajas que desea añadir al catálogo");
 				int idb2 = ss2.nextInt();
 				lista.add(bajas.get(idb2 - 1));
 				bajas.remove(idb2 - 1);
-                               	break;	
+                               	break;
+                               	/**
+                             	  * Añadir un objeto del ArrayList lista al ArrayList bajas
+                             	  * @param idb2 El número de la fila en la que se encuentra el Item en el ArrayList lista
+                             	  */
+               	
 			case 9:
 				Scanner ss3 = new Scanner(System.in);
                                 System.out.println("Indique la fila del catálogo que desea añadir a la lista de bajas");
@@ -138,7 +192,9 @@ public class Principal{
 				lista.remove(idb3 - 1);
 				break;
 				
-				//}
+				/**
+				 * Fin del programa
+				 */
 			case 10: 
 				salir = true;
 
